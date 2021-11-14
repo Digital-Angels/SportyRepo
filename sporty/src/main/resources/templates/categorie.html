@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Jumbotron Template for Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body style="background-image: url('https://www.hotelaumanoir.com/images/stories/services/luxembourg-parc-salle-de-gym-03-md.jpg');">
+
+<div data-th-replace="navbar"></div>
+
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="width: 40%; margin-bottom: 15%; margin-right: 30%; margin-left: 30%; margin-top:5%;padding-top:2px;">
+        <div class="container">
+            <div class="container">
+                <h2> Ajouter categorie</h2>
+            <a th:href="@{/categories/list}" class="btn btn-primary">List des Categories</a>
+                <br>
+            </div>
+            <div class="container">
+                <form th:object="${Formcategorie}" method="Post" th:action="@{/categories/save}">
+                    <div class="form-group">
+                        <label for="nomcat">Nom</label>
+                        <input type="text" class="form-control" id="nomcat" th:field="*{nomcat}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="container">
+
+    <p>&copy;     devolepped by Digital-Angels
+    </p>
+    <p>&copy; Company 2021</p>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+>
